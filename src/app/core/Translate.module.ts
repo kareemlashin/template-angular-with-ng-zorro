@@ -2,7 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { LOCAL_STORAGE } from '../modules/enums/localStorage';
+import { LOCAL_STORAGE } from './enums/localStorage';
 import { NgModule } from '@angular/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 

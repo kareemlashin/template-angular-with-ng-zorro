@@ -4,23 +4,25 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { WrapTranslateComponent } from './components/wrap-translate/wrap-translate.component';
-import { View1Component } from './views/view1/view1.component';
-import { View2Component } from './views/view2/view2.component';
+import { ZorroModule } from '../core/zorro.module';
 
 const WRAP_DECLARE = [WrapTranslateComponent];
+const EXPORTS = [
+  FormsModule,
+  ReactiveFormsModule,
+  HttpClientModule,
+  ZorroModule,
+
+];
 @NgModule({
-  declarations: [WRAP_DECLARE, View1Component, View2Component],
+  declarations: [...WRAP_DECLARE],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ...EXPORTS
   ],
   exports: [
-    WRAP_DECLARE,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ...EXPORTS,
+    ...WRAP_DECLARE,
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { TranslationUtilsService } from 'src/app/modules/helpers/translate.service';
+import { TranslationUtilsService } from 'src/app/core/helpers/translate.service';
 
 @Component({
   selector: 'app-wrap-translate',

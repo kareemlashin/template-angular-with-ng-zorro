@@ -1,5 +1,6 @@
 import { Observable, map } from 'rxjs';
 
+import { EMPTY } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { LOCAL_STORAGE } from '../enums/localStorage';
 import { TranslateService } from '@ngx-translate/core';
@@ -45,7 +46,7 @@ export class TranslationUtilsService {
     if(key){
       return this._translate.get(key);
     }
-    return this._translate.get('');
+    return EMPTY
   }
   /**
    * Get an observable that emits the current language whenever it changes.
