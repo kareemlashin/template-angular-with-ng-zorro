@@ -1,1 +1,6 @@
-{"name": "John","greeting":"greeting","view1":"view1 1","view2":"view2 2"}
+{
+  "name": "John",
+  "greeting": "greeting",
+  "view1": "view1",
+  "view2": "view2"
+}

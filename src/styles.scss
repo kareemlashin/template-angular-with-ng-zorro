@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.ant-menu-rtl .ant-menu-item .ant-menu-item-icon, .ant-menu-rtl .ant-menu-submenu-title .ant-menu-item-icon, .ant-menu-rtl .ant-menu-item .anticon, .ant-menu-rtl .ant-menu-submenu-title .anticon {
+    margin-right: 0px !important; 
+    margin-left: 10px !important;
+}
+.ant-layout{
+    min-height:100vh;
+}

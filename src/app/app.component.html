@@ -1,0 +1,267 @@
+    <nz-layout [dir]="'rtl'">
+      <nz-sider [(nzCollapsed)]="isCollapsed">
+        <div class="logo"></div>
+        <ul nz-menu nzTheme="dark" nzMode="inline">
+          <li nz-submenu nzTitle="User" nzIcon="user">
+            <ul>
+              <li nz-menu-item>Tom</li>
+              <li nz-menu-item>Bill</li>
+              <li nz-menu-item>Alex</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Team" nzIcon="team">
+            <ul>
+              <li nz-menu-item>Team 1</li>
+              <li nz-menu-item>Team 2</li>
+            </ul>
+          </li>
+          <li nz-menu-item>
+            <i nz-icon nzType="file"></i>
+            <span>File</span>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout>
+        <nz-header>
+          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
+        </nz-header>
+        <nz-content>
+          <nz-breadcrumb>
+            <nz-breadcrumb-item>User</nz-breadcrumb-item>
+            <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+          </nz-breadcrumb>
+          <div class="inner-content">
+            <nz-radio-group [(ngModel)]="size">
+                <label nz-radio-button nzValue="large">Large</label>
+                <label nz-radio-button nzValue="default">Default</label>
+                <label nz-radio-button nzValue="small">Small</label>
+              </nz-radio-group>
+              <br />
+              <br />
+              <button nz-button [nzSize]="size" nzType="primary">Primary</button>
+              <button nz-button [nzSize]="size" nzType="default">Default</button>
+              <button nz-button [nzSize]="size" nzType="dashed">Dashed</button>
+              <a nz-button [nzSize]="size" nzType="link">Link</a>
+              <br />
+              <button nz-button nzType="primary" [nzSize]="size"><span nz-icon nzType="download"></span></button>
+              <button nz-button nzType="primary" [nzSize]="size" nzShape="circle"><span nz-icon nzType="download"></span></button>
+              <button nz-button nzType="primary" [nzSize]="size" nzShape="round"><span nz-icon nzType="download"></span></button>
+              <button nz-button nzType="primary" [nzSize]="size" nzShape="round">
+                <span nz-icon nzType="download"></span>
+                Download
+              </button>
+              <button nz-button nzType="primary" [nzSize]="size">
+                <span nz-icon nzType="download"></span>
+                Download
+              </button>
+              <br />
+              <nz-button-group [nzSize]="size">
+                <button nz-button nzType="primary">
+                  <span nz-icon nzType="left"></span>
+                  Backward
+                </button>
+                <button nz-button nzType="primary">
+                  Forward
+                  <span nz-icon nzType="right"></span>
+                </button>
+              </nz-button-group>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae
+                  sunt a te dicta? Refert tamen, quo modo.
+                </p>
+                <nz-divider></nz-divider>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae
+                  sunt a te dicta? Refert tamen, quo modo.
+                </p>
+                <nz-divider nzText="With Text"></nz-divider>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae
+                  sunt a te dicta? Refert tamen, quo modo.
+                </p>
+                <nz-divider nzDashed [nzText]="text">
+                  <ng-template #text>
+                    <span nz-icon nzType="plus"></span>
+                    Add
+                  </ng-template>
+                </nz-divider>
+          
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae
+                  sunt a te dicta? Refert tamen, quo modo.
+                </p>
+              </div>
+              <h4>String</h4>
+              <nz-breadcrumb nzSeparator=">">
+                <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+                <nz-breadcrumb-item>
+                  <a>Application List</a>
+                </nz-breadcrumb-item>
+                <nz-breadcrumb-item>An Application</nz-breadcrumb-item>
+              </nz-breadcrumb>
+              <br />
+              <h4>TemplateRef</h4>
+              <nz-breadcrumb [nzSeparator]="iconTemplate">
+                <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+                <nz-breadcrumb-item>
+                  <a>Application List</a>
+                </nz-breadcrumb-item>
+                <nz-breadcrumb-item>An Application</nz-breadcrumb-item>
+              </nz-breadcrumb>
+              <ng-template #iconTemplate><span nz-icon nzType="arrow-right"></span></ng-template>
+              <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+                Click me
+                <span nz-icon nzType="down"></span>
+              </a>
+              <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                  <li nz-menu-item>1st menu item</li>
+                  <li nz-menu-item>2nd menu item</li>
+                  <li nz-menu-divider></li>
+                  <li nz-menu-item nzDisabled>disabled menu item</li>
+                  <li nz-submenu nzTitle="sub menu">
+                    <ul>
+                      <li nz-menu-item>3rd menu item</li>
+                      <li nz-menu-item>4th menu item</li>
+                    </ul>
+                  </li>
+                  <li nz-submenu nzDisabled nzTitle="disabled sub menu">
+                    <ul>
+                      <li nz-menu-item>3rd menu item</li>
+                      <li nz-menu-item>4th menu item</li>
+                    </ul>
+                  </li>
+                </ul>
+              </nz-dropdown-menu>
+              <ul nz-menu nzMode="horizontal">
+                <li nz-menu-item nzSelected>
+                  <span nz-icon nzType="mail"></span>
+                  Navigation One
+                </li>
+                <li nz-menu-item nzDisabled>
+                  <span nz-icon nzType="appstore"></span>
+                  Navigation Two
+                </li>
+                <li nz-submenu nzTitle="Navigation Three - Submenu" nzIcon="setting">
+                  <ul>
+                    <li nz-menu-group nzTitle="Item 1">
+                      <ul>
+                        <li nz-menu-item>Option 1</li>
+                        <li nz-menu-item>Option 2</li>
+                      </ul>
+                    </li>
+                    <li nz-menu-group nzTitle="Item 2">
+                      <ul>
+                        <li nz-menu-item>Option 3</li>
+                        <li nz-menu-item>Option 4</li>
+                        <li nz-submenu nzTitle="Sub Menu">
+                          <ul>
+                            <li nz-menu-item nzDisabled>Option 5</li>
+                            <li nz-menu-item>Option 6</li>
+                          </ul>
+                        </li>
+                        <li nz-submenu nzDisabled nzTitle="Disabled Sub Menu">
+                          <ul>
+                            <li nz-menu-item>Option 5</li>
+                            <li nz-menu-item>Option 6</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li nz-menu-item>
+                  <a href="https://ng.ant.design" target="_blank" rel="noopener noreferrer">Navigation Four - Link</a>
+                </li>
+              </ul>
+              <div class="site-page-header-ghost-wrapper">
+                <nz-page-header nzBackIcon [nzGhost]="false">
+                  <nz-page-header-title>Title</nz-page-header-title>
+                  <nz-page-header-subtitle>This is a subtitle</nz-page-header-subtitle>
+                  <nz-page-header-extra>
+                    <nz-space>
+                      <button *nzSpaceItem nz-button>Operation</button>
+                      <button *nzSpaceItem nz-button>Operation</button>
+                      <button *nzSpaceItem nz-button nzType="primary">Primary</button>
+                    </nz-space>
+                  </nz-page-header-extra>
+                  <nz-page-header-content>
+                    <nz-descriptions nzSize="small" [nzColumn]="3">
+                      <nz-descriptions-item nzTitle="Created" [nzSpan]="1">Lili Qu</nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Association" [nzSpan]="1"><a>421421</a></nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Creation Time" [nzSpan]="1">2017-01-10</nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Effective Time" [nzSpan]="1">2017-10-10</nz-descriptions-item>
+                      <nz-descriptions-item nzTitle="Remarks" [nzSpan]="2">
+                        Gonghu Road, Xihu District, Hangzhou, Zhejiang, China
+                      </nz-descriptions-item>
+                    </nz-descriptions>
+                  </nz-page-header-content>
+                </nz-page-header>
+              </div>
+              <nz-pagination [nzPageIndex]="1" [nzTotal]="500" [nzItemRender]="renderItemTemplate"></nz-pagination>
+              <ng-template #renderItemTemplate let-type let-page="page">
+                <ng-container [ngSwitch]="type">
+                  <a *ngSwitchCase="'page'">{{ page }}</a>
+                  <a *ngSwitchCase="'prev'">Previous</a>
+                  <a *ngSwitchCase="'next'">Next</a>
+                  <a *ngSwitchCase="'prev_5'"><<</a>
+                  <a *ngSwitchCase="'next_5'">>></a>
+                </ng-container>
+              </ng-template>
+              <nz-steps>
+                <nz-step nzTitle="Login" nzStatus="finish" nzIcon="user"></nz-step>
+                <nz-step nzTitle="Verification" nzStatus="finish" nzIcon="solution"></nz-step>
+                <nz-step nzTitle="Pay" nzStatus="process" nzIcon="loading"></nz-step>
+                <nz-step nzTitle="Done" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
+                <ng-template #iconTemplate><span nz-icon nzType="smile"></span></ng-template>
+              </nz-steps>
+              <nz-steps [nzCurrent]="current">
+                <nz-step nzTitle="Finished"></nz-step>
+                <nz-step nzTitle="In Progress"></nz-step>
+                <nz-step nzTitle="Waiting"></nz-step>
+              </nz-steps>
+          
+              <div class="steps-content">{{ index }}</div>
+              <div class="steps-action">
+                <button nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
+                  <span>Previous</span>
+                </button>
+                <button nz-button nzType="default" (click)="next()" *ngIf="current < 2">
+                  <span>Next</span>
+                </button>
+                <button nz-button nzType="primary" (click)="done()" *ngIf="current === 2">
+                  <span>Done</span>
+                </button>
+              </div>
+
+              <nz-steps [nzCurrent]="1" nzProgressDot>
+                <nz-step nzTitle="Finished" nzDescription="This is a description."></nz-step>
+                <nz-step nzTitle="In Progress" nzDescription="This is a description."></nz-step>
+                <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
+              </nz-steps>
+              <nz-divider></nz-divider>
+              <nz-steps [nzCurrent]="1" nzProgressDot nzDirection="vertical">
+                <nz-step nzTitle="Finished" nzDescription="This is a description. This is a description."></nz-step>
+                <nz-step nzTitle="Finished" nzDescription="This is a description. This is a description."></nz-step>
+                <nz-step nzTitle="In Progress" nzDescription="This is a description. This is a description."></nz-step>
+                <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
+                <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
+              </nz-steps>
+
+              <input
+              placeholder='try to type "b"'
+              nz-input
+              [(ngModel)]="inputValue"
+              (ngModelChange)="onChange($event)"
+              [nzAutocomplete]="auto"
+            />
+            <nz-autocomplete [nzDataSource]="filteredOptions" #auto></nz-autocomplete>
+          
+            </div>
+     
+          
+        </nz-content>
+        <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+      </nz-layout>
+    </nz-layout>
